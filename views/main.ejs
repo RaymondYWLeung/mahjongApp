@@ -1,0 +1,44 @@
+<html>
+	<head>
+		<style>
+			table {
+			  font-family: arial, sans-serif;
+			  border-collapse: collapse;
+			  width: 100%;
+			}
+
+			td, th {
+			  border: 1px solid #dddddd;
+			  text-align: left;
+			  padding: 8px;
+			}
+
+			tr:nth-child(even) {
+			  background-color: #dddddd;
+			}
+		</style>
+	</head>
+	<body>
+		<h2>Welcome, <%=username%><h3>
+		<table>
+			<tr>
+				<th>Event</th>
+				<th>Date</th>
+				<th>Creator</th>
+			</tr>
+			<% for(i = 0 ; i < record.length ; i++) {%>
+				<tr>
+					<td>
+						<a href=/event_detail?eventID=<%=record[i]._id%>
+							<div style="height:100%;width:100%">
+								<%=record[i].event%>
+							</div>								
+						</a>
+					</td>
+					<td><%=record[i].date.toISOString().slice(0,10)%></td>
+					<td><%=record[i].creator%></td>						
+				</tr>
+			<% } %>
+		</table>
+	</body>
+</html>

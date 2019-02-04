@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<style>
+			table {
+			  font-family: arial, sans-serif;
+			  border-collapse: collapse;
+			  width: 100%;
+			}
+
+			td, th {
+			  border: 1px solid #dddddd;
+			  text-align: left;
+			  padding: 8px;
+			}
+
+			tr:nth-child(even) {
+			  background-color: #dddddd;
+			}
+		</style>
+	</head>
+	<body>
+		<h2><%=event.event%><h3>
+		<table>
+			<tr>
+				<th>Round</th>
+				<th>Player 1</th>
+				<th>Player 2</th>
+				<th>Player 3</th>
+				<th>Player 4</th>
+			</tr>
+			<% for(i = 0 ; i < event.game.length ; i++) {%>
+				<tr>
+					<td><%=i+1%></td>
+					<td><%=event.game[i].p1%></td>
+					<td><%=event.game[i].p2%></td>
+					<td><%=event.game[i].p3%></td>	
+					<td><%=event.game[i].p4%></td>						
+				</tr>
+			<% } %>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,18 @@
+<html>
+	<body>
+		<% if (typeof(error) != "undefined"){ %> 
+				<% if(error == "empty_input"){ %>
+					<h2>Empty username or password</h2>
+				<% }else if (error == "wrong_input") { %>
+					<h2>Wrong username or password</h2>
+				<% } %>
+		 <% } %>
+
+		<form action="/login" method="post">
+			Username: <input type="text" name="username"><br>
+			Password: <input type="password" name="password"><br>
+		<input type="submit" value="Login">
+		<input type="submit" value="Register" formaction="/register">
+		</form>
+	</body>
+</html>
